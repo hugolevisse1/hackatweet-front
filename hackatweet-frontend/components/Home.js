@@ -39,11 +39,11 @@ function Home() {
            </button>
 
       <Dialog open={open} onClose={handleClose}>
-        <DialogContent  className = {styles.dialog}>
+        <DialogContent className={styles.dialog}>
            <SignIn/>          
         </DialogContent>
   
-        <DialogActions  className = {styles.dialog}>
+        <DialogActions className={styles.dialog}>
           <button className={styles.logInBtn} onClick={handleClose}>Sign in</button>
         </DialogActions>
       </Dialog>
