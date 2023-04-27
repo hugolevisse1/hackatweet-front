@@ -1,22 +1,93 @@
 .main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 13;
+  background-image: url(../images/leftside.jpg);
+  background-size: cover;
+}
+.right{
+  background-color: rgb(23, 32, 42);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  grid-column-start: 6;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 13;
+  padding-left: 30px;
+  padding-bottom: 180px;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.logoHome{
+width: 250px;
+height: 250px;
 }
 
-.title a {
-  color: #0070f3;
+.signUpButton:hover{
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    animation:slidebg 2s linear infinite;
+}
+
+.signInButton:hover{
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+  animation:slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+
+.signUpButton{
+  background-color: rgb(86, 154, 233);
+  font-size: 14px;
+  font-weight: bold;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  width: 150px;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+}
+.signInButton{
+  background-color: rgb(23, 32, 42);
+  font-size: 14px;
+  font-weight: bold;
+  border: 0.5 solid rgb(57, 65, 75);
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: rgb(77, 145, 229);
+  cursor: pointer;
+  display: inline-block;
+  width: 150px;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
   text-decoration: none;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.bigTitle{
+  font-size: 70px;
+  
 }
