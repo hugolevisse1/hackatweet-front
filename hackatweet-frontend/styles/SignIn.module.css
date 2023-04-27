@@ -1,0 +1,12 @@
+.modalContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffff;
+    margin: 0px;
+}
+
+.logoModal{
+    width: 60px;
+    height: 60px;
+}
