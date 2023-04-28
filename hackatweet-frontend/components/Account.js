@@ -4,7 +4,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Tweet from "./Tweet";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Image from 'next/image';
+import Image from "next/image";
 
 function Account() {
   const user = useSelector((state) => state.user.value);
@@ -38,16 +38,18 @@ function Account() {
           rotation={180}
           style={{ color: "#ffffff" }}
         />
-        <div>
-            <div className={styles.bottomLeftUser}>
-			<Image src='/profilepic.jpg' alt='pix' width={40} height={40} />
-
-                <div>
-                    <h4>Spongebob</h4>
-                    <p>@squarepants</p>
-                </div>
-            </div>
-            <button>Logout</button>
+        <div className={styles.bottomLeftUser}>
+          <div className={styles.user}>
+            <Image
+              src="/images/profilepic.jpg"
+              alt="profile pic"
+              width={40}
+              height={40}
+            />
+            <h4>Spongebob</h4>
+            <p>@squarepants</p>
+          </div>
+          <button>Logout</button>
         </div>
       </div>
       <div className={styles.middle}>

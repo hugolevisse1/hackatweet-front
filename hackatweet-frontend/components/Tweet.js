@@ -1,11 +1,9 @@
 import styles from "../styles/Tweet.module.css";
-import profilepic from '../images/profilepic.jpg'
 
 function Tweet() {
   return (
     <div>
       <div>
-        <img src={profilepic}/>
         <p>Name</p>
         <p>Username</p>
       </div>
