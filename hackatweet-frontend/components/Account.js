@@ -2,6 +2,7 @@ import styles from "../styles/Account.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Tweet from "./Tweet";
+import Image from 'next/image';
 
 function Account() {
   return (
@@ -14,6 +15,17 @@ function Account() {
           rotation={180}
           style={{ color: "#ffffff" }}
         />
+        <div>
+            <div className={styles.bottomLeftUser}>
+			<Image src='/profilepic.jpg' alt='pix' width={40} height={40} />
+
+                <div>
+                    <h4>Spongebob</h4>
+                    <p>@squarepants</p>
+                </div>
+            </div>
+            <button>Logout</button>
+        </div>
       </div>
       <div className={styles.middle}>
         <div className={styles.postTweet}>
@@ -25,7 +37,7 @@ function Account() {
             id="tweet"
           ></textarea>
         </div>
-        <Tweet/>
+        <Tweet />
       </div>
       <div className={styles.rightSide}></div>
     </div>

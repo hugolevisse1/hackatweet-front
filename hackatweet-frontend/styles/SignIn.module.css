@@ -16,7 +16,10 @@
   width: 20vw;
   height: 5vh;
   border-radius: 5px;
+  border: 1px solid white;
   padding: 5px;
+  background-color: rgb(23, 32, 42);
+  margin: 5px;
 }
 .createAccountBtn {
   margin-top: 40px;

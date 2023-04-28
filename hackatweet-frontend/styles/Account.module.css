@@ -12,6 +12,9 @@
     grid-row: 1/19;
     grid-column: 1/5;
     border-right: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .logoHome{
