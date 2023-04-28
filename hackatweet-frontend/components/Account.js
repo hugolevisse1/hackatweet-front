@@ -1,6 +1,7 @@
 import styles from "../styles/Account.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import Tweet from "./Tweet";
 
 function Account() {
   return (
@@ -24,6 +25,7 @@ function Account() {
             id="tweet"
           ></textarea>
         </div>
+        <Tweet/>
       </div>
       <div className={styles.rightSide}></div>
     </div>
