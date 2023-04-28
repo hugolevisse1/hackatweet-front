@@ -32,7 +32,7 @@ function Account() {
   let msgData = []
 
   const msg = msgData.map((data, i) => {
-      
+
     return <Tweet key={i} firstname={data.firstname} username={data.username} tweet={data.tweet}/>;
   });
 
@@ -75,7 +75,7 @@ function Account() {
               <p>@{username}</p>
             </div>
           </div>
-          <button onClick={handleLogout}>Logout</button>
+          <button className={styles.logOutBtn} onClick={handleLogout}>Logout</button>
         </div>
       </div>
       <div className={styles.middle}>
