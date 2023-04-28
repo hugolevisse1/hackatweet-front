@@ -5,7 +5,9 @@ function Tweet() {
 
     return(
         <div>
-            hey
+            <div>
+                
+            </div>
         </div>
     )
 }
