@@ -46,6 +46,7 @@ function SignIn() {
       <h4>Connect to Hackatweet</h4>
       <input
         onChange={(e) => setUsername(e.target.value)}
+        value={username}
         className={styles.inputs}
         type="text"
         placeholder="Username"
@@ -53,6 +54,7 @@ function SignIn() {
       />
       <input
         onChange={(e) => setPasword(e.target.value)}
+        value={password}
         className={styles.inputs}
         type="password"
         placeholder="Password"
