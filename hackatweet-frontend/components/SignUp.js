@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "../reducers/user";
+
 import styles from "../styles/SignIn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
 import { useRouter } from "next/router";
 
 function SignUp() {
@@ -9,6 +12,8 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPasword] = useState("");
   const router = useRouter();
+
+  const dispatch = useDispatch();
 
   const handleRegister = () => {
     fetch("https://hackaton-two.vercel.app/users/signup", {
@@ -24,7 +29,7 @@ function SignUp() {
       .then((data) => {
         if (data.result) {
           console.log(data);
-          // dispatch(login({ username: signUpUsername, token: data.token }));
+          dispatch(login({ username: username, token: data.token }));
           setFirstname("");
           setUsername("");
           setPasword("");

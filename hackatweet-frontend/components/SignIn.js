@@ -1,13 +1,17 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "../reducers/user";
+
 import styles from "../styles/SignIn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
 import { useRouter } from "next/router";
 
 function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPasword] = useState("");
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleConnexion = () => {
     console.log(username, password);
@@ -23,7 +27,7 @@ function SignIn() {
       .then((data) => {
         console.log(data);
         if (data.result) {
-          // dispatch(login({ username: signUpUsername, token: data.token }));
+          dispatch(login({ username: username, token: data.token }));
           setUsername("");
           setPasword("");
           router.push("/account");
