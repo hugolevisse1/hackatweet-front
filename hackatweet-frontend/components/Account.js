@@ -1,9 +1,10 @@
 import styles from "../styles/Account.module.css";
+import { useEffect, useState } from "react";
+
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Tweet from "./Tweet";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import { logout } from "../reducers/user";
@@ -15,6 +16,11 @@ function Account() {
   const firstname = user.firstname;
   const [tweet, setTweet] = useState("");
 
+  useEffect(() => {
+    if (!token) {
+      router.push("/");
+    }
+  }, []);
   const router = useRouter();
   const dispatch = useDispatch();
   const handleLogout = () => {
