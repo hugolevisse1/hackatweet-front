@@ -15,6 +15,7 @@ function Account() {
   const token = user.isConnected;
   const firstname = user.firstname;
   const [tweet, setTweet] = useState("");
+  const [verif, setVerif] = useState(false)
 
   useEffect(() => {
     if (!token) {
@@ -28,7 +29,13 @@ function Account() {
     router.push("/");
   };
 
-  
+  let msgData = []
+
+  const msg = msgData.map((data, i) => {
+      
+    return <Tweet key={i} firstname={data.firstname} username={data.username} tweet={data.tweet}/>;
+  });
+
 
   const handleTweet = () => {
     fetch("https://hackaton-two.vercel.app/tweets", {
@@ -43,6 +50,9 @@ function Account() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        if(data.result){
+          setVerif(true)
+        }
       });
   };
 
@@ -81,9 +91,7 @@ function Account() {
           ></textarea>
           <button className={styles.tweetBtn} onClick={handleTweet}>Tweet</button>
         </div>
-        <Tweet />
-        <Tweet />
-        <Tweet />
+        {msg}
       </div>
       <div className={styles.rightSide}></div>
     </div>
