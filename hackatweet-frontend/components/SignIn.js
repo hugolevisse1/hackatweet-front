@@ -44,7 +44,7 @@ function SignIn() {
         style={{ color: "#ffffff" }}
       />
       <h4>Connect to Hackatweet</h4>
-      <input 
+      <input
         onChange={(e) => setUsername(e.target.value)}
         value={username}
         className={styles.inputs}
