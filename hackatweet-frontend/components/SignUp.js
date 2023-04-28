@@ -29,7 +29,13 @@ function SignUp() {
       .then((data) => {
         if (data.result) {
           console.log(data);
-          dispatch(login({ username: username, token: data.token }));
+          dispatch(
+            login({
+              username: username,
+              token: data.token,
+              firstname: firstname,
+            })
+          );
           setFirstname("");
           setUsername("");
           setPasword("");
