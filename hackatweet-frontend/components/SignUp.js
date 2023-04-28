@@ -2,11 +2,13 @@ import styles from "../styles/SignIn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPasword] = useState("");
+  const router = useRouter();
 
   const handleRegister = () => {
     fetch("http://localhost:3000/users/signup", {
@@ -26,6 +28,7 @@ function SignUp() {
           setFirstname("");
           setUsername("");
           setPasword("");
+          router.push("/account");
         }
       });
   };
