@@ -1,9 +1,9 @@
 import styles from "../styles/SignIn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
 
-
-function SignIn() {
+function SignUp() {
   return (
     <div className={styles.modalContent}>
       <FontAwesomeIcon
@@ -13,7 +13,13 @@ function SignIn() {
         rotation={180}
         style={{ color: "#ffffff" }}
       />
-      <h4>Connect to Hackatweet</h4>
+      <h4>Create your Hackatweet account</h4>
+      <input
+        className={styles.inputs}
+        type="text"
+        placeholder="Name"
+        id="signUpName"
+      />
       <input
         className={styles.inputs}
         type="text"
@@ -30,4 +36,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;
