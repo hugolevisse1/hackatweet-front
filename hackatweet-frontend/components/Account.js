@@ -22,6 +22,8 @@ function Account() {
     router.push("/");
   };
 
+  
+
   const handleTweet = () => {
     fetch("https://hackaton-two.vercel.app/tweets", {
       method: "POST",
@@ -49,15 +51,15 @@ function Account() {
           style={{ color: "#ffffff" }}
         />
         <div>
-            <div className={styles.bottomLeftUser}>
-			<Image src='/profilepic.jpg' alt='pix' width={40} height={40} />
+          <div className={styles.bottomLeftUser}>
+            <Image src="/images/profilepic.jpg" alt="pix" width={40} height={40} />
 
-                <div>
-                    <h4>Spongebob</h4>
-                    <p>@squarepants</p>
-                </div>
+            <div>
+              <h4>{firstname}</h4>
+              <p>@{username}</p>
             </div>
-            <button>Logout</button>
+          </div>
+          <button onClick={handleLogout}>Logout</button>
         </div>
       </div>
       <div className={styles.middle}>
@@ -71,8 +73,10 @@ function Account() {
             placeholder="What's on your mind..."
             id="tweet"
           ></textarea>
-          <button onClick={handleTweet}>Tweet</button>
+          <button className={styles.tweetBtn} onClick={handleTweet}>Tweet</button>
         </div>
+        <Tweet />
+        <Tweet />
         <Tweet />
       </div>
       <div className={styles.rightSide}></div>

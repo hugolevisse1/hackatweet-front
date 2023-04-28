@@ -2,7 +2,7 @@ import styles from "../styles/Tweet.module.css";
 
 function Tweet() {
   return (
-    <div>
+    <div className={styles.tweet}>
       <div>
         <p>Name</p>
         <p>Username</p>
@@ -15,6 +15,7 @@ function Tweet() {
         </p>
       </div>
     </div>
+    
   );
 }
 
