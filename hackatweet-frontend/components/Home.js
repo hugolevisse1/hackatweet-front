@@ -73,12 +73,6 @@ function Home() {
             <DialogContent className={styles.dialog}>
               <SignIn />
             </DialogContent>
-
-            <DialogActions className={styles.dialog}>
-              <button className={styles.logInBtn} onClick={handleClose}>
-                Sign in
-              </button>
-            </DialogActions>
           </Dialog>
         </div>
       </main>
