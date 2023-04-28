@@ -20,7 +20,7 @@ function Home() {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
   const [openCreate, setOpenCreate] = useState(false);
 
   const handleClickOpenCreate = () => {
@@ -30,7 +30,6 @@ function Home() {
   const handleCloseCreate = () => {
     setOpenCreate(false);
   };
-  
 
   return (
     <div>
@@ -50,18 +49,16 @@ function Home() {
             <br /> happening
           </h2>
           <h4>Join Hackatweet today.</h4>
-          <button className={styles.signUpButton} onClick={handleClickOpenCreate}>
+          <button
+            className={styles.signUpButton}
+            onClick={handleClickOpenCreate}
+          >
             Sign Up
           </button>
           <Dialog open={openCreate} onClose={handleCloseCreate}>
             <DialogContent className={styles.dialog}>
               <SignUp />
             </DialogContent>
-            <DialogActions className={styles.dialog}>
-              <button className={styles.createAccountBtn} onClick={handleCloseCreate}>
-                Create account
-              </button>
-            </DialogActions>
           </Dialog>
           <h6>Already have an account?</h6>
           <button

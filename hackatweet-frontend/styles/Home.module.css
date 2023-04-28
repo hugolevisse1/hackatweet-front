@@ -90,7 +90,7 @@ height: 250px;
 
 .bigTitle{
   font-size: 70px;
-  
+
 }
 .logInBtn{
 background-color: rgb(86, 154, 233);
@@ -111,22 +111,6 @@ transition: all .1s cubic-bezier(.4, 0, .2, 1);
 box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
 }
 
-.createAccountBtn{
-  background-color: rgb(23, 32, 42);
-  font-size: 14px;
-  font-weight: bold;
-  border: 0.5 solid rgb(57, 65, 75);
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: rgb(77, 145, 229);
-  cursor: pointer;
-  display: inline-block;
-  width: 200px;
-  line-height: 1;
-  padding: 1rem 1.6rem;
-  text-align: center;
-  text-decoration: none;
-}
 .dialog{
   margin: 0;
   background-color: rgb(23, 32, 42);

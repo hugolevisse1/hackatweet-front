@@ -4,6 +4,32 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 
 function SignUp() {
+  const [firstname, setFirstname] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPasword] = useState("");
+
+  const handleRegister = () => {
+    fetch("http://localhost:3000/users/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstname,
+        username,
+        password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          console.log(data);
+          // dispatch(login({ username: signUpUsername, token: data.token }));
+          setFirstname("");
+          setUsername("");
+          setPasword("");
+        }
+      });
+  };
+
   return (
     <div className={styles.modalContent}>
       <FontAwesomeIcon
@@ -15,23 +41,32 @@ function SignUp() {
       />
       <h4>Create your Hackatweet account</h4>
       <input
+        onChange={(e) => setFirstname(e.target.value)}
+        value={firstname}
         className={styles.inputs}
         type="text"
         placeholder="Name"
         id="signUpName"
       />
       <input
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
         className={styles.inputs}
         type="text"
         placeholder="Username"
         id="signUpUsername"
       />
       <input
+        onChange={(e) => setPasword(e.target.value)}
+        value={password}
         className={styles.inputs}
         type="password"
         placeholder="Password"
         id="signUpPassword"
       />
+      <button className={styles.createAccountBtn} onClick={handleRegister}>
+        Create account
+      </button>
     </div>
   );
 }

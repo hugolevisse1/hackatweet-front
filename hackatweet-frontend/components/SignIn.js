@@ -2,7 +2,6 @@ import styles from "../styles/SignIn.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
-
 function SignIn() {
   return (
     <div className={styles.modalContent}>
